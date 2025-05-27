@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width= device-width, initial-scale=1.0 ">
+       <title> Weather App</title>
+       <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+       
+       
+
+       <!-- Top-right Three-Dot Menu -->
+       <div class="menu-container">
+              <div class="menu-icon">⋮</div>
+              <div class="menu-dropdown" id="menuDropdown">
+                     <div id="exploreMenuBtn">🌍Explore Cities</div>
+                     <!--div id="locationBtn">📍 Use My Location</div-->
+              </div>
+       </div>
+
+       <!-- Dark Mode Toggle Switch -->
+       <div class="theme-toggle">
+              <label class="switch">
+                     <input type="checkbox" id="themeSwitch">
+                     <span class="slider round"></span>
+              </label>
+       </div>
+
+       <div class="container">
+
+              
+
+              <div class="Weather_container">
+                     <div class="temp">
+                            <p>20</p>
+                     </div>
+
+                     <!--section id="exploreSection" style="display: none;">
+                            <h2>Explore Cities</h2>
+                            <div id="exploreCards" class="forecast"></div>
+                     </section-->
+
+                     <div class="time_location">
+                            <p>Delhi</p>
+                            <span>12:58 - Monday 2025-05-20</span>
+                     </div>
+
+                     <div class="condition">
+                            <!--img class="weather-icon" src="" alt="Weather icon" />    if not work then remove it//-->
+                            <p class="emoji">🌤️</p>
+                            <p class="text">Partly Cloudy</p>
+                            <!--p>Mist</p//-->
+                     </div>
+
+                     <!--  Wind and Humidity Section -->
+                     <div class="details">
+                            <p class="wind">💨 Wind: -- km/h</p>
+                            <p class="humidity">💧 Humidity: --%</p>
+                     </div>
+
+                     <div class="forecast">
+                     <!-- Forecast data will be inserted here -->
+                     </div>
+
+                     <!--div class="explore">
+                            <h2>🌍 Explore Cities</h2>
+                            <div class="explore-cards" id="exploreCards">
+                                Cards will be populated here via JavaScript -->
+                            <!--/div>
+                     </div-->
+              </div>
+              <nav>
+                     <form>
+                            
+                            <input type="text" class="search_area" placeholder="Search for a city..." required />
+                            <span class="search-icon">🔍</span>
+                            
+                            <div class="geo-container">
+                                   <img src="https://img.icons8.com/ios-filled/24/marker.png" class="geo-icon" alt="location icon" />
+                                   <div class="geo-dropdown" id="geoDropdown">
+                                          <p id="useLocation">📍 Use My Location</p>
+                                   </div>
+                            </div>
+
+                            
+                     </form>
+
+                     <!-- 🌍 Explore Button added here -->
+                     <!--button id="exploreBtn">🌍 Explore Cities</button-->
+              </nav>
+       </div> 
+       
+       
+       
+       
+
+   
+    
+
+</body>
+<script src="script.js"></script>
+</html>    

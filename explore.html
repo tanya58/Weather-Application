@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Explore Cities</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0f7fa;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #00796b;
+    }
+
+    .explore-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .explore-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>🌍 Weather in Random Cities</h2>
+  <div class="explore-container" id="exploreContainer"></div>
+
+  <script>
+    const exploreContainer = document.getElementById("exploreContainer");
+    const randomCities = [
+        "Delhi India", "Kolkata", "Chenni", "Pune",
+        "Gujarat", "Ahmedabad", "Odisha", "Mumbai",
+        "Bihar", "Jammu and Kashmir", "punjab", "Haryana"
+    ];
+
+    function getEmoji(condition) {
+      const lower = condition.toLowerCase();
+      if (lower.includes("sunny")) return "☀️";
+      if (lower.includes("clear")) return "🌕";
+      if (lower.includes("partly cloudy")) return "⛅";
+      if (lower.includes("cloudy")) return "☁️";
+      if (lower.includes("overcast")) return "☁️";
+      if (lower.includes("mist")) return "🌫️";
+      if (lower.includes("rain")) return "🌧️";
+      if (lower.includes("thunder")) return "⛈️";
+      if (lower.includes("snow")) return "❄️";
+      if (lower.includes("fog")) return "🌁";
+      if (lower.includes("haze")) return "🌫️";
+      if (lower.includes("blizzard")) return "🌨️";
+      if (lower.includes("drizzle")) return "🌦️";
+      if (lower.includes("sleet")) return "🌨️";
+      if (lower.includes("freezing")) return "❄️🌁";
+      return "🌈";
+    }
+
+    async function fetchExploreCities() {
+      exploreContainer.innerHTML = "";
+      for (let city of randomCities) {
+        try {
+          const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=85ab611122ca4f1394875020252105&q=${city}&aqi=no`);
+          const data = await res.json();
+
+          const temp = data.current.temp_c;
+          const condition = data.current.condition.text;
+          const emoji = getEmoji(condition);
+
+          const card = document.createElement("div");
+          card.classList.add("explore-card");
+          card.innerHTML = `
+              <p><strong>${city}</strong></p>
+              <p>${emoji}</p>
+              <p>${condition}</p>
+              <p>${temp}°C</p>
+          `;
+          exploreContainer.appendChild(card);
+        } catch (err) {
+          console.error("Error loading city:", city, err);
+        }
+      }
+    }
+
+    fetchExploreCities();
+  </script>
+</body>
+</html>
