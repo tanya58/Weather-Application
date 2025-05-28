@@ -37,3 +37,5 @@ JavaScript – Logic, API integration, interactivity
 OpenWeatherMap API – Real-time weather and forecast data
 
 # 📸 Screenshots
+
+![Image](https://github.com/user-attachments/assets/bd93428d-910d-463a-9fae-8a495688df65)
