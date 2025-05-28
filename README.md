@@ -39,3 +39,6 @@ OpenWeatherMap API – Real-time weather and forecast data
 # 📸 Screenshots
 
 ![Image](https://github.com/user-attachments/assets/bd93428d-910d-463a-9fae-8a495688df65)
+![Image](https://github.com/user-attachments/assets/a9474ddf-a438-4480-9925-353c1dcd6e9c)
+
+![Image](https://github.com/user-attachments/assets/edbbaa55-23ae-4c2f-a757-f4013725e2fb)
